@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Calculadora de IMC</h1>
+
+<div id="calcs">
+  <% @calcs.each do |calc| %>
+    <%= render calc %>
+    <p>
+      <%= link_to "Show this calc", calc %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New calc", new_calc_path %>
+
+
+<%
+=begin%>
+ if imc < 18.5
+  puts "abaixo do peso"
+
+elsif imc < 25
+  puts "saudavel"
+
+elsif imc <= 30
+  puts "peso em excesso"
+
+elsif imc <= 35
+  puts "obesidade grau I"
+
+elsif imc < 40
+  puts "obesidade grau II (severa)"
+
+else
+  puts "obesidade grau III (mórbida)"
+end 
+<%
+=end%>
