@@ -1,3 +1,4 @@
+<%= turbo_stream_from "calcs" %>
 <main>  
   <div class="box">
 
@@ -8,11 +9,10 @@
       <%= link_to "Novo cálculo", new_calc_path, class: "new-calc" %>    
     <% end %>
 
-    <%= turbo_stream_from "calcs" %>
       <h2>Últimos cálculos</h2>
 
-      <%= turbo_frame_tag "resuls_frame" do %>
-        <div class="calcs-box">
+      <%= turbo_frame_tag "results_frame" do %>
+        <div class="calcs-box" id="calc_stream">
           <div id="calcs">
             <% @calcs.each do |calc| %>
               <%= render calc %>

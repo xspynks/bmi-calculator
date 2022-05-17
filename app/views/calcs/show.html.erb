@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @calc %>
+<%= turbo_frame_tag "show_calc_frame" do %>
+  <%= render @calc %>
+<% end %>
 
 <div>
   <%= link_to "Edit this calc", edit_calc_path(@calc) %> |

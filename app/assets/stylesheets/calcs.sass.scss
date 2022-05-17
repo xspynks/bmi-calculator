@@ -1,6 +1,10 @@
 $color-primary: red;
 $color-primary-rotate: rgb(161, 15, 15);
 
+* {
+  text-decoration: none;
+}
+
 .turbo-progress-bar {
   background: linear-gradient(
     to right,

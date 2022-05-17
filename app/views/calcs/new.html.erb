@@ -1,11 +1,9 @@
-<h1>New calc</h1>
+  <%= turbo_frame_tag "new_calc_frame" do %>
+    <%= render "form", calc: @calc %>
+  <% end %>
 
-<%= turbo_frame_tag "new_calc_frame" do %>
-  <%= render "form", calc: @calc %>
-<% end %>
+  <br>
 
-<br>
-
-<div>
-  <%= link_to "Back to calcs", calcs_path %>
-</div>
+  <div>
+    <%= link_to "Back to calcs", calcs_path %>
+  </div>
