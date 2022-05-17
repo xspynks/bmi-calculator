@@ -1,38 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<main>  
+  <div class="box">
 
-<h1>Calculadora de IMC</h1>
+      <p style="color: green"><%= notice %></p>
 
-<div id="calcs">
-  <% @calcs.each do |calc| %>
-    <%= render calc %>
-    <p>
-      <%= link_to "Show this calc", calc %>
-    </p>
-  <% end %>
-</div>
+      <h1>Calculadora de IMC</h1>
+    <%= turbo_frame_tag "new_calc_frame" do %>
+      <%= link_to "Novo cálculo", new_calc_path, class: "new-calc" %>    
+    <% end %>
 
-<%= link_to "New calc", new_calc_path %>
+    <%= turbo_stream_from "calcs" %>
+      <h2>Últimos cálculos</h2>
 
+      <%= turbo_frame_tag "resuls_frame" do %>
+        <div class="calcs-box">
+          <div id="calcs">
+            <% @calcs.each do |calc| %>
+              <%= render calc %>
 
-<%
-=begin%>
- if imc < 18.5
-  puts "abaixo do peso"
+            <% end %>
+          </div>
+        </div>
+   <% end %>
 
-elsif imc < 25
-  puts "saudavel"
+  </div>
+</main>
 
-elsif imc <= 30
-  puts "peso em excesso"
-
-elsif imc <= 35
-  puts "obesidade grau I"
-
-elsif imc < 40
-  puts "obesidade grau II (severa)"
-
-else
-  puts "obesidade grau III (mórbida)"
-end 
-<%
-=end%>

@@ -1,0 +1,76 @@
+$color-primary: red;
+$color-primary-rotate: rgb(161, 15, 15);
+
+.turbo-progress-bar {
+  background: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-primary-rotate)
+  );
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url("background.jpg");
+  background-size: cover;
+  text-decoration: none;
+  font-family: "Roboto-Serif", sans-serif;
+}
+
+main {
+  width: 100%;
+}
+
+.box {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 800px;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  border: 5px solid #e0e0dd;
+  border-radius: 12px;
+  background-color: rgba(233, 233, 233, 0.8);
+  -webkit-box-shadow: 0px 2px 26px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 26px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 26px -7px rgba(0, 0, 0, 0.75);
+
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    margin: 50px 0 10px 0;
+  }
+
+  p {
+    padding-bottom: 3px;
+  }
+
+  strong {
+    padding: 0 0 5px 0;
+  }
+
+  .new-calc {
+    color: white;
+    background-color: black;
+    padding: 5px;
+  }
+}
+
+.calcs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  p {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-bottom: #f03343 3px solid;
+    margin: 0 0 10px 0;
+  }
+}
