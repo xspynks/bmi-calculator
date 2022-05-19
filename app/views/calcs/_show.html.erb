@@ -1,0 +1,37 @@
+
+ 
+ <%= turbo_frame_tag "person_result_frame" do %> 
+<div id="<%= dom_id calc %>">
+
+  <div class="">
+    <%= calc.name %>, seu IMC é <%= calc.bmi %>. 
+    <br>
+    <br>
+    
+    <% if calc.bmi < 18.5 %>
+      Isso significa que você está abaixo do peso.
+    
+      <% elsif calc.bmi <= 25 %>
+      Legal, você está saudavel.
+
+      <% elsif calc.bmi <= 30 %>
+      Eita, você está com peso em excesso.
+
+      <% elsif calc.bmi <= 35 %>
+      Você possui obesidade grau I (mórbida) :(
+
+      <% elsif calc.bmi <= 40 %>
+      Você possui obesidade grau II (mórbida) :(
+
+      <% else %>
+      Você possui obesidade grau III (mórbida) :(
+    <% end %>
+  <br>
+  <br>
+  <%= render partial: "calcs/result_button" %>
+  
+  </div>
+</div>
+<% end %>
+
+

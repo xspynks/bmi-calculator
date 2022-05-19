@@ -23,6 +23,12 @@ class CalcsController < ApplicationController
   def create
     @calc = Calc.new(calc_params)
 
+    # Calcula o IMC utilizando os valores recebidos pelos parâmetros do form na view e salva o resultado no DB.
+    height = calc_params[:height].to_f 
+  	weight = calc_params[:weight].to_f
+
+  	@calc.bmi = (weight / (height * height)).round(2)
+
     respond_to do |format|
       if @calc.save
         format.html { redirect_to calc_url(@calc), notice: "Calc was successfully created." }
@@ -31,14 +37,7 @@ class CalcsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         # format.json { render json: @calc.errors, status: :unprocessable_entity }
       end
-    end
-
-    # Calcula o IMC utilizando os valores recebidos pelos parâmetros do form na view e salva o resultado no DB.
-    height = calc_params[:height].to_f 
-  	weight = calc_params[:weight].to_f
-
-  	@calc.bmi = (weight / (height * height)).round(2)
-    @calc.save
+    end    
 
   end
 

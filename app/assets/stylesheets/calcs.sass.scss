@@ -3,6 +3,7 @@ $color-primary-rotate: rgb(161, 15, 15);
 
 * {
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .turbo-progress-bar {
@@ -30,7 +31,7 @@ main {
 .box {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   width: 800px;
   padding: 10px;
   transform: translate(-50%, -50%);

@@ -1,13 +1,19 @@
 <%= turbo_stream_from "calcs" %>
+
 <main>  
   <div class="box">
 
-      <p style="color: green"><%= notice %></p>
-
       <h1>Calculadora de IMC</h1>
-    <%= turbo_frame_tag "new_calc_frame" do %>
-      <%= link_to "Novo cálculo", new_calc_path, class: "new-calc" %>    
-    <% end %>
+
+      <%= render partial: "calcs/new_button" %>
+    
+      <%= turbo_frame_tag "something" do %>
+        <div class="calcs-box" id="calc_result">
+          <div>
+            
+          </div>
+        </div>
+      <% end %>
 
       <h2>Últimos cálculos</h2>
 
@@ -20,7 +26,7 @@
             <% end %>
           </div>
         </div>
-   <% end %>
+      <% end %>
 
   </div>
 </main>

@@ -1,0 +1,6 @@
+  <%= turbo_frame_tag "new_calc_frame" do %>
+    <%= link_to "Finalizar", 
+                root_path,
+                data: { turbo_frame: "_top" },
+                class: "new-calc" %>    
+  <% end %>
